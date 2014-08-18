@@ -24,7 +24,9 @@ mongoose.connection.once('open',function(){
                         greeting = new Greeting ({sentence : "Hello World SMD"});
                         greeting.save();
                 } else {
-                        console.log("Greeting already exists");
+                        console.log("Greeting already exists - creating a new one");
+                        greeting = new Greeting ({sentence : "Hello World GITTTT" + new Date().getTime() / 1000;});
+                        greeting.save();
                 }
         });
 });
@@ -51,7 +53,7 @@ app.use(function(err, req, res, next){
         }
 });
 
-console.log('starting the Express (NodeJS) Web Server SMD');
+console.log('starting the Express (NodeJS) Web Server SMD and this is my first GIT commit');
 app.listen(8080);
 console.log('Webserver is listening on port 8080');
 
